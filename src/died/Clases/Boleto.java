@@ -4,21 +4,23 @@ import java.time.LocalDate;
 
 public class Boleto {
 	
+	private Integer id;
 	private Integer nroBoleto;
 	private String email;
 	private String nombreCliente;
 	private LocalDate fechaVenta;
-	private String estacionOrigen;
-	private String estacionDestino;
+	private Estacion estacionOrigen;
+	private Estacion estacionDestino;
 	private Camino camino;
 	private float costo;
 	
 	
 	
-	
-	public Boleto(Integer nroBoleto, String email, String nombreCliente, LocalDate fechaVenta, String estacionOrigen,
-			String estacionDestino, Camino camino, float costo) {
+
+	   public Boleto(Integer nroBoleto, String email, String nombreCliente, LocalDate fechaVenta,
+			Estacion estacionOrigen, Estacion estacionDestino, Camino camino, float costo) {
 		super();
+		
 		this.nroBoleto = nroBoleto;
 		this.email = email;
 		this.nombreCliente = nombreCliente;
@@ -28,6 +30,15 @@ public class Boleto {
 		this.camino = camino;
 		this.costo = costo;
 	}
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public Integer getNroBoleto() {
 		return nroBoleto;
 	}
@@ -52,18 +63,23 @@ public class Boleto {
 	public void setFechaVenta(LocalDate fechaVenta) {
 		this.fechaVenta = fechaVenta;
 	}
-	public String getEstacionOrigen() {
+
+	public Estacion getEstacionOrigen() {
 		return estacionOrigen;
 	}
-	public void setEstacionOrigen(String estacionOrigen) {
+
+	public void setEstacionOrigen(Estacion estacionOrigen) {
 		this.estacionOrigen = estacionOrigen;
 	}
-	public String getEstacionDestino() {
+
+	public Estacion getEstacionDestino() {
 		return estacionDestino;
 	}
-	public void setEstacionDestino(String estacionDestino) {
+
+	public void setEstacionDestino(Estacion estacionDestino) {
 		this.estacionDestino = estacionDestino;
 	}
+
 	public Camino getCamino() {
 		return camino;
 	}
