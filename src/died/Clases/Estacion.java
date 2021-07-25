@@ -1,6 +1,7 @@
 package died.Clases;
 
-import java.time.Instant;
+
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,14 +9,19 @@ public class Estacion {
 
 	private Integer id;
 	private String nombre;
-	private Instant inicio;
-	private Instant cierre;
+	private Time inicio;
+	private Time cierre;
 	private EstadoEstacion estadoEstacion;
 	private List<Mantenimiento> mantenimientos;
+	private List<Trayecto> trayectos;
+	private Boleto boleto;
 
+	public Estacion () {
+		this.mantenimientos=new ArrayList<Mantenimiento>();
+		this.trayectos=new ArrayList<Trayecto>();
+	}
 	
-	
-	public Estacion( String nombre, Instant inicio, Instant cierre, EstadoEstacion estadoEstacion) {
+	public Estacion( String nombre, Time  inicio, Time  cierre, EstadoEstacion estadoEstacion) {
 		super();
 		
 		this.nombre = nombre;
@@ -23,10 +29,10 @@ public class Estacion {
 		this.cierre = cierre;
 		this.estadoEstacion = estadoEstacion;
 		this.mantenimientos=new ArrayList<Mantenimiento>();
-		
+		this.trayectos=new ArrayList<Trayecto>();
 		
 	}
-	
+			
 	public Integer getId() {
 		return id;
 	}
@@ -55,16 +61,21 @@ public class Estacion {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public Instant getInicio() {
+	
+	
+	public Time getInicio() {
 		return inicio;
 	}
-	public void setInicio(Instant inicio) {
+
+	public void setInicio(Time inicio) {
 		this.inicio = inicio;
 	}
-	public Instant getCierre() {
+
+	public Time getCierre() {
 		return cierre;
 	}
-	public void setCierre(Instant cierre) {
+
+	public void setCierre(Time cierre) {
 		this.cierre = cierre;
 	}
 
@@ -76,7 +87,22 @@ public class Estacion {
 		this.mantenimientos = mantenimientos;
 	}
 
+	public List<Trayecto> getTrayectos() {
+		return trayectos;
+	}
 
-	
+	public void setTrayectos(List<Trayecto> trayectos) {
+		this.trayectos = trayectos;
+	}
+
+	public Boleto getBoleto() {
+		return boleto;
+	}
+
+	public void setBoleto(Boleto boleto) {
+		this.boleto = boleto;
+	}
 	
 }
+		
+
