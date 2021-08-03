@@ -1,6 +1,10 @@
 package died.Clases;
 
+
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 
 public class Mantenimiento {
     private Integer id;
@@ -8,7 +12,7 @@ public class Mantenimiento {
 	private LocalDate fechaFin;
 	private String observaciones;
 	
-			
+	public Mantenimiento () {}
 	
 	
 	
@@ -48,6 +52,18 @@ public class Mantenimiento {
 	public void setObservaciones(String observaciones) {
 		this.observaciones = observaciones;
 	}
+
+	
+public  LocalDate convertirFecha(Date date) {
+		
+		ZoneId defaultZoneId = ZoneId.systemDefault();
+		Instant instant = date.toInstant();
+		LocalDate localDate = instant
+		        .atZone(defaultZoneId).toLocalDate();
+	return localDate;
+	}
+
+
 
 
 	

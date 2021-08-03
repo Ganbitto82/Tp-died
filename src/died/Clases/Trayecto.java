@@ -1,4 +1,4 @@
-package died.Clases;
+ package died.Clases;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +10,13 @@ public class Trayecto {
 	private Integer distancia;
 	private Integer cantMaxPasajeros;
 	private EstadoRuta estado;
-	private Float costo;
+	private float costo;
 	private List<Estacion> estaciones;
+	private List<Linea> lineas;
 	
+	public Trayecto() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	public Trayecto(Estacion origen, Estacion destino, Integer distancia, Integer cantMaxPasajeros,
 			EstadoRuta estado, Float costo) {
@@ -25,8 +29,11 @@ public class Trayecto {
 		this.estado = estado;
 		this.costo = costo;
 		this.estaciones=new ArrayList<Estacion>();
+		this.setLineas(new ArrayList<Linea>());
 	}
 	
+
+
 	public Integer getId() {
 		return id;
 	}
@@ -44,18 +51,25 @@ public class Trayecto {
 		this.estaciones = estaciones;
 	}
 
+	
+	
+
 	public Estacion getOrigen() {
 		return origen;
 	}
+
 	public void setOrigen(Estacion origen) {
 		this.origen = origen;
 	}
+
 	public Estacion getDestino() {
 		return destino;
 	}
+
 	public void setDestino(Estacion destino) {
 		this.destino = destino;
 	}
+
 	public Integer getDistancia() {
 		return distancia;
 	}
@@ -79,6 +93,14 @@ public class Trayecto {
 	}
 	public void setCosto(Float costo) {
 		this.costo = costo;
+	}
+
+		public List<Linea> getLineas() {
+		return lineas;
+	}
+
+	public void setLineas(List<Linea> lineas) {
+		this.lineas = lineas;
 	}
 
 	

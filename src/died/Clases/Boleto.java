@@ -14,6 +14,7 @@ public class Boleto {
 	private Camino camino;
 	private float costo;
 	
+	public Boleto() {}
 	
 	
 
